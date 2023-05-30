@@ -1,0 +1,41 @@
+<!-- table_template.html -->
+
+<table>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        white-space: pre;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #050000;
+      }
+      th {
+        background-color: #d8ed62;
+      }
+      a {
+        display: block;
+      }
+    </style>
+    
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Summary</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events %}
+      <tr>
+        <td>{{ event.date }}</td>
+        <td>{{ event.summary }}</td>
+        <td><a href="{{ event.link }}">{{ event.link }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  
